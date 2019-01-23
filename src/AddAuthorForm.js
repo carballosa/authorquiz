@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 
 import './AddAuthorForm.css'
 
@@ -66,4 +68,17 @@ function AddAuthorForm({match, onAddAuthor}) {
   );
 }
 
-export default AddAuthorForm;
+const mapStateToProps = (state) => { return {} }; // no need to access the store / state in this form
+
+const mapDispatchToProps = (dispatch, props) => {
+  return {
+    onAddAuthor: (author) => {
+      dispatch({type: 'ADD_AUTHOR', author});
+      props.history.push('/'); // navigate back to app root
+    }
+  }
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(
+  AddAuthorForm
+));
