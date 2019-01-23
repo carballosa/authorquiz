@@ -79,13 +79,13 @@ function reducer(
     case 'ANSWER_SELECTED':
       const isCorrect = state.turnData.author.books.some(
         book => book === action.answer);
-      return Object.assign({}, state, {highlight: isCorrect? 'correct' : 'wrong'});
+      return {...state, highlight: isCorrect? 'correct' : 'wrong'};
 
     case 'CONTINUE':
-      return Object.assign({}, state, {turnData: getTurnData(authors), highlight: ''});
+      return {...state, turnData: getTurnData(authors), highlight: ''};
 
     case 'ADD_AUTHOR':
-        return Object.assign({}, state, {authors: state.authors.concat([action.author])});
+      return {...state, authors: state.authors.concat([action.author])};
 
     default:
       return state;
