@@ -1,3 +1,6 @@
+# React Fundamentals Training Workout
+https://app.pluralsight.com/library/courses/react-fundamentals-update/table-of-contents
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
